@@ -7,7 +7,7 @@ export async function doSocialLogin(formData: FormData): Promise<void> {
 
     // Ensure 'action' is a string before passing it to signIn
     if (typeof action === "string") {
-        await signIn(action, { redirectTo: "/home" });
+        await signIn(action, { redirectTo: "/profile" });
     } else {
         throw new Error("Invalid action parameter in formData");
     }
