@@ -1,18 +1,19 @@
 import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
-
-export default NextAuth({
+export const { handlers, auth, signIn, signOut} = NextAuth({
     providers: [
         GithubProvider({
-            clientId: process.env.GITHUB_CLIENT_ID!,
-            clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+            clientId: process.env.GITHUB_CLIENT_ID,
+            clientSecret: process.env.GITHUB_CLIENT_SECRET,
+
             authorization: {
                 params: {
                     prompt: "consent",
                     access_type: "offline",
-                    response_type: "code", // Ensures the OAuth flow works as expected
-                },
-            },
+                    response_type: "code",
+
+                }
+            }
         }),
     ],
     callbacks: {
