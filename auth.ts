@@ -1,7 +1,7 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 
-const options: NextAuthOptions = {
+export default NextAuth({
     providers: [
         GithubProvider({
             clientId: process.env.GITHUB_CLIENT_ID!,
@@ -10,17 +10,15 @@ const options: NextAuthOptions = {
                 params: {
                     prompt: "consent",
                     access_type: "offline",
-                    response_type: "code",
+                    response_type: "code", // Ensures the OAuth flow works as expected
                 },
             },
         }),
     ],
     callbacks: {
-        async redirect(){
+        async redirect() {
             // Redirect to /profile after successful login
             return `https://mp-6-phi.vercel.app/profile`;
         },
     },
-};
-
-export default NextAuth(options);
+});
