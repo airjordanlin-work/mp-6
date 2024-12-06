@@ -71,11 +71,11 @@ export default function Home() {
             <Box
                 sx={{
                     transform: 'scale(0.8)',
-                    opacity: 0,
+                    opacity: 1,
                     animation: 'scaleUp 1s ease-in-out 1s forwards',
                 }}
             >
-                Sign in to Github
+
                 <LoginForm />
             </Box>
         </Box>
