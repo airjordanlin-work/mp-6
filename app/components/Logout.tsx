@@ -1,18 +1,18 @@
-import { doSocialLogin } from "@/app/actions";
+import {doLogout} from "@/app/actions"
 
-const LoginForm: React.FC = () => {
+const Logout: React.FC = () => {
     return (
-        <form action={doSocialLogin} method="post">
+        <form action={doLogout} method="post">
             <button
                 className="bg-black text-white p-1 rounded-md m-1 text-lg"
                 type="submit"
                 name="action"
                 value="github"
             >
-                Sign in with GitHub
+                Logout
             </button>
         </form>
     );
 };
 
-export default LoginForm;
+export default Logout;
