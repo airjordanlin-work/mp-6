@@ -75,6 +75,7 @@ export default function Home() {
                     animation: 'scaleUp 1s ease-in-out 1s forwards',
                 }}
             >
+                Sign in to Github
                 <LoginForm />
             </Box>
         </Box>
